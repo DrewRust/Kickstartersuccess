@@ -5,8 +5,8 @@ import uvicorn
 from app.api import predict, viz
 
 app = FastAPI(
-    title='DS API',
-    description='Lorem ipsum',
+    title="Kickstarter Success Predictor",
+    description="Uses Machine Learning (NLP) to evaluate your Project's Description.",
     version='0.1',
     docs_url='/',
 )
