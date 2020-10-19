@@ -36,15 +36,21 @@ def get_prediction(input):
 @router.post('/predict')
 async def predict(item: str):
     """
-    ## How to use:
-    * Click "try it out."
-    * Enter various items in the kickstart campaign needed
-    * Monetary goal, time live, etc
-    * This will give a response of whether or not the campaign is likely to succeed
+    # Kickstarter Project NLP Model to Evaluate any Kickstarter Project's Likelihood of Success at being fully funded.
+    
+    ### 1) Frist click "try it out."
+    
+    ### 2) Then enter a description of your project for example, "Happy Halloween, my demented Dynamite comic book reading darlings!  It’s me, Elvira Mistress of the Dark, with a brand new treat for your goodie bag this year. I’ve teamed up with Dreadful David Avallone and Disturbed Dave Acosta to write a brand new comic book story that is perfect for this horror filled season. Follow my four color adventure through a nightmarish apocalyptic landscape after waking from a hairspray induced coma.  What strange creatures will I encounter...find out right here!  Watch for updates from me and exciting stretch goals coming up soon, until then...Unpleasant Dreemz..."
+    
+    ### 3) Then click execute.
+    
+    ### Output) A response of whether or not the project is likely to meet it's funding goal and be successful.  In this case it will be a "1" meaning the model thinks this could be a successfully funded project!
+    
     ## Needed Info:
-    - `item`: item1
-    ## Response:
-    - Whether or not the kickstarter is likely to be a success or not.
+    - `item`: (str) Project Description Entered.
+    
+    ## Response: (str)
+    - Whether or not the kickstarter project is likely to be a success or not. "1" is a success, "0" is guessed to be a failure.
     """
 
     success_failure = get_prediction(item)
